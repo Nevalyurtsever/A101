@@ -30,8 +30,16 @@ public class A101Page {
     public WebElement uyeOlmadanDevamEt;
     @FindBy(xpath = "//iframe[@id='_hjRemoteVarsFrame']")
     public WebElement iframe;
-    @FindBy(xpath = "//label[text()='E-mail']")
+    @FindBy(xpath = "//input[@name='user_email']")
     public WebElement mailKutusu;
+    @FindBy(xpath = "//*[@title='Yeni adres oluştur']")
+    public WebElement yeniAdresOlustur;
+    @FindBy(xpath = "//*[@placeholder='Ev adresim, iş adresim vb.']")
+    public WebElement adresBasligi;
+    @FindBy(xpath = "//button[normalize-space()='KAYDET']")
+    public WebElement adresKaydet;
+    @FindBy(xpath = "//*[@class='button block green js-proceed-button']")
+    public WebElement kaydetVeDevamEt;
 
 
 }

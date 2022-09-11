@@ -1,7 +1,7 @@
-@a101
+@a101feature
 Feature: US1001 istenen gorevleri yapabilmelidir
-
-  Scenario:TC01 Kullanici acilan ürünün siyah oldugunu dogrular
+@a101scenario
+  Scenario:TC01 Kullanici acilan ürünün siyah oldugunu dogrular ve odeme ekranına ulastigini dogrular
     And kullanici A101 anasayfasinda
     Then  kullanici giyim aksesuar bolumune tiklar
     Then kullanici kadin ic giyim bolumune tiklar
@@ -14,8 +14,11 @@ Feature: US1001 istenen gorevleri yapabilmelidir
     And kullanici mail kutusuna mail girer
     And kullanici yeni adres olustur butonuna tiklar
     And kullanici adres bilgilerini basariyla girer
+    And kullanici 3 saniye bekler
     And kullanici kargo secer ve kaydet ve devam et butonuna tiklar
     And kullanici odeme ekranina ulastigini kontrol eder
+    And kullanici sayfayi kapatir
+
 
 
 
