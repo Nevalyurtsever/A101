@@ -1,13 +1,27 @@
 package utilities;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.WebDriver;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.safari.SafariDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.File;
+import java.io.IOException;
 import java.time.Duration;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.function.Function;
 
 public class Driver {
     /*
@@ -72,5 +86,31 @@ public class Driver {
         }
 
     }
+    public static void wait(int secs) {
+        try {
+            Thread.sleep(1000 * secs);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+
+    public static void ekranGoruntusu (){
+        TakesScreenshot ts = (TakesScreenshot) Driver.getDriver();
+        LocalDateTime date=LocalDateTime.now();
+        DateTimeFormatter dtf= DateTimeFormatter.ofPattern("YYMMddHHmmss");
+        String tarih = date.format(dtf);
+
+        File tumSayfaResim= new File("target/ekranGoruntuleri/tumSayfa"+tarih+".jpeg");
+        File geciciDosya= ts.getScreenshotAs(OutputType.FILE);
+        try {
+            FileUtils.copyFile(geciciDosya,tumSayfaResim);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
 
 }
