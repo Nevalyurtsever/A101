@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="0.23">
+    <testcase classname="US1001 istenen görevleri yapabilmelidir" name="TC01 Kullanici acilan ürünün siyah oldugunu dogrular" time="0.083">
+        <failure message="The scenario has pending or undefined step(s)" type="java.lang.Exception"><![CDATA[And kullanici A101 anasayfasında............................................undefined
+Then kullanici giyim aksesuar bolumune tiklar...............................skipped
+Then kullanici kadın ic giyim bolumune tiklar...............................skipped
+Then kullanici Dizaltı Çorap bolumune tiklar................................skipped
+And kullanici acilan ilk urunun siyah oldugunu dogrular.....................skipped
+And kullanici sepete ekle butonuna tiklar...................................skipped
+And kullanici sepeti goruntule butonuna tiklar..............................skipped
+And kullanici sepeti onayla butonuna tiklar.................................skipped
+And kullanici uye olmadan devam et butonuna tiklar..........................skipped
+And kullanici mail kutusuna mail girer......................................skipped
+And kullanici yeni adres olustur butonuna tiklar............................skipped
+And kullanici adres bilgilerini basarıyla girer.............................skipped
+And kullanici kargo secer ve kaydet ve devam et butonuna tiklar.............skipped
+And kullanici odeme ekranına ulastıgını kontrol eder........................skipped
+]]></failure>
+    </testcase>
+</testsuite>
