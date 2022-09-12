@@ -41,26 +41,27 @@ public class Driver {
     obje olusturmak icin kullanilan constructor'i private yaptiginizda
     bsaka class'larda Driver class'indan obje olusturulmasi mumkun OLAMAZ
      */
-    private Driver(){
+    private Driver() {
 
     }
+
     static WebDriver driver;
 
-    public static WebDriver getDriver(){
+    public static WebDriver getDriver() {
 
-        if (driver==null) {
-            switch (ConfigReader.getProperty("browser")){
-                case "chrome" :
+        if (driver == null) {
+            switch (ConfigReader.getProperty("browser")) {
+                case "chrome":
                     WebDriverManager.chromedriver().setup();
                     driver = new ChromeDriver();
                     break;
-                case "safari" :
+                case "safari":
                     WebDriverManager.safaridriver().setup();
-                    driver=new SafariDriver();
+                    driver = new SafariDriver();
                     break;
-                case "firefox" :
+                case "firefox":
                     WebDriverManager.firefoxdriver().setup();
-                    driver=new FirefoxDriver();
+                    driver = new FirefoxDriver();
                     break;
                 case "headless-chrome":
                     WebDriverManager.chromedriver().setup();
@@ -79,13 +80,14 @@ public class Driver {
         return driver;
     }
 
-    public static void closeDriver(){
-        if (driver!=null){ // driver'a deger atanmissa
+    public static void closeDriver() {
+        if (driver != null) { // driver'a deger atanmissa
             driver.close();
-           driver=null;
+            driver = null;
         }
 
     }
+
     public static void wait(int secs) {
         try {
             Thread.sleep(1000 * secs);
@@ -95,22 +97,20 @@ public class Driver {
     }
 
 
-
-    public static void ekranGoruntusu (){
+    public static void ekranGoruntusu() {
         TakesScreenshot ts = (TakesScreenshot) Driver.getDriver();
-        LocalDateTime date=LocalDateTime.now();
-        DateTimeFormatter dtf= DateTimeFormatter.ofPattern("YYMMddHHmmss");
+        LocalDateTime date = LocalDateTime.now();
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("YYMMddHHmmss");
         String tarih = date.format(dtf);
 
-        File tumSayfaResim= new File("target/ekranGoruntuleri/tumSayfa"+tarih+".jpeg");
-        File geciciDosya= ts.getScreenshotAs(OutputType.FILE);
+        File tumSayfaResim = new File("target/ekranGoruntuleri/tumSayfa" + tarih + ".jpeg");
+        File geciciDosya = ts.getScreenshotAs(OutputType.FILE);
         try {
-            FileUtils.copyFile(geciciDosya,tumSayfaResim);
+            FileUtils.copyFile(geciciDosya, tumSayfaResim);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-
 
 
 }

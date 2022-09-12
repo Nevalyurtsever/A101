@@ -20,7 +20,7 @@ Feature: US1001 istenen gorevleri yapabilmelidir
     And kullanici adres bilgilerini basariyla girer
     And kullanici kargo secer ve kaydet ve devam et butonuna tiklar
     And kullanici odeme ekranina ulastigini kontrol eder
-   # And kullanici sayfayi kapatir
+    And kullanici sayfayi kapatir
 
 
 

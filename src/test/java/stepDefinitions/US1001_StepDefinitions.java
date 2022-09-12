@@ -21,7 +21,7 @@ import java.time.format.DateTimeFormatter;
 public class US1001_StepDefinitions {
     A101Page page = new A101Page();
     Faker faker = new Faker();
-    Actions actions;
+
 
     @Given("kullanici A101 anasayfasinda")
     public void kullanici_a101_anasayfasinda() {
@@ -48,9 +48,11 @@ public class US1001_StepDefinitions {
     @Then("kullanici acilan ilk urunun siyah oldugunu dogrular")
     public void kullanici_acilan_ilk_urunun_siyah_oldugunu_dogrular() {
         page.siyahCorapSec.click();
-        String actualTitle = Driver.getDriver().getTitle();
-        String expectedTitle = "Siyah";
-        Assert.assertTrue(actualTitle.contains(expectedTitle));
+        String actualYazi = page.secilenRenkSiyahYazisi.getText();
+        String expectedyazi = "SİYAH";
+        System.out.println(actualYazi);
+        Assert.assertTrue(actualYazi.contains(expectedyazi));
+
     }
 
     @Then("kullanici sepete ekle butonuna tiklar")
@@ -97,7 +99,6 @@ public class US1001_StepDefinitions {
         Driver.wait(2);
         Select select3 = new Select(page.mahalleDropDown);
         select3.selectByVisibleText("71 EVLER MAH");
-
 
         page.adresKutusu.sendKeys(ConfigReader.getProperty("adres"));
         page.postaKoduKutusu.sendKeys(ConfigReader.getProperty("postaKodu"));

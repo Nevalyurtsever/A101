@@ -15,14 +15,14 @@ public class A101Page {
     public WebElement cerezKabulEtButonu;
     @FindBy(xpath = "//a[normalize-space()='Giyim & aksesuar']")
     public WebElement giyimAksesuarBolumu;
-
-
     @FindBy(xpath = "//a[@class='js-filter-link '][contains(text(),'Kadın İç Giyim')]")
     public WebElement kadınIcGiyimSecenegi;
     @FindBy(xpath = "//a[@class='js-filter-link '][contains(text(),'Dizaltı Çorap')]")
     public WebElement dizAltiCorapBolumu;
     @FindBy(xpath = "//h3[contains(text(),'Penti Kadın 50 Denye Pantolon Çorabı Siyah')]")
     public WebElement siyahCorapSec;
+    @FindBy(xpath = "//*[@class='selected-variant-text']")
+    public WebElement secilenRenkSiyahYazisi;
     @FindBy(xpath = "//button[@class='add-to-basket button green block with-icon js-add-basket']")
     public WebElement sepeteEkleButonu;
     @FindBy(xpath = "(//*[text()='Sepeti Görüntüle'])[2]")

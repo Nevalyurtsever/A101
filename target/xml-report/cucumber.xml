@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="26.691">
-    <testcase classname="US1001 istenen gorevleri yapabilmelidir" name="TC01 Kullanici acilan ürünün siyah oldugunu dogrular ve odeme ekranına ulastigini dogrular" time="26.567">
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="47.177">
+    <testcase classname="US1001 istenen gorevleri yapabilmelidir" name="TC01 Kullanici acilan ürünün siyah oldugunu dogrular ve odeme ekranına ulastigini dogrular" time="46.823">
         <system-out><![CDATA[Given kullanici A101 anasayfasinda..........................................passed
 Then kullanici giyim aksesuar bolumune tiklar...............................passed
 Then kullanici kadin ic giyim bolumune tiklar...............................passed
@@ -15,6 +15,7 @@ And kullanici yeni adres olustur butonuna tiklar............................pass
 And kullanici adres bilgilerini basariyla girer.............................passed
 And kullanici kargo secer ve kaydet ve devam et butonuna tiklar.............passed
 And kullanici odeme ekranina ulastigini kontrol eder........................passed
+And kullanici sayfayi kapatir...............................................passed
 ]]></system-out>
     </testcase>
 </testsuite>
